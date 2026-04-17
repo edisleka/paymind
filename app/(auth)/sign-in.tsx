@@ -8,7 +8,7 @@ const SignIn = () => {
         href='/(auth)/sign-up'
         className='mt-4 rounded bg-primary text-white p-4'
       >
-        Create Acoount
+        Create Account
       </Link>
     </View>
   )
