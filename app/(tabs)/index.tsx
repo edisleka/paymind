@@ -54,7 +54,7 @@ export default function App() {
               <FlatList
                 data={UPCOMING_SUBSCRIPTIONS}
                 renderItem={({ item }) => (
-                  <UpcomingSubscriptionCard {...item} />
+                  <UpcomingSubscriptionCard data={item} />
                 )}
                 keyExtractor={(item) => item.id}
                 horizontal
@@ -71,17 +71,21 @@ export default function App() {
           </>
         )}
         data={HOME_SUBSCRIPTIONS}
-        renderItem={({ item }) => (
-          <SubscriptionCard
-            {...item}
-            expanded={expandedSubscriptionId === item.id}
-            onPress={() =>
-              setExpandedSubscriptionId((currentId) =>
-                currentId === item.id ? null : item.id,
-              )
-            }
-          />
-        )}
+        renderItem={({ item }) => {
+          const { id, ...subscriptionProps } = item
+
+          return (
+            <SubscriptionCard
+              {...subscriptionProps}
+              expanded={expandedSubscriptionId === id}
+              onPress={() =>
+                setExpandedSubscriptionId((currentId) =>
+                  currentId === id ? null : id,
+                )
+              }
+            />
+          )
+        }}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
         extraData={expandedSubscriptionId}

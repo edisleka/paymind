@@ -1,6 +1,9 @@
 import dayjs from 'dayjs'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
 
 const USD = 'USD'
+
+dayjs.extend(customParseFormat)
 
 /**
  * Formats a number as standard US-locale currency (e.g. $1,234.56).
@@ -46,7 +49,7 @@ function formatCurrencyFallback(value: number, currency: string): string {
 
 export const formatSubscriptionDateTime = (value?: string): string => {
   if (!value) return 'Not provided'
-  const parsedDate = dayjs(value)
+  const parsedDate = dayjs(value, 'MM/DD/YYYY', true)
   return parsedDate.isValid() ? parsedDate.format('MM/DD/YYYY') : 'Not provided'
 }
 

@@ -3,6 +3,13 @@ import { useFonts } from 'expo-font'
 import { SplashScreen, Stack } from 'expo-router'
 import { useEffect } from 'react'
 
+SplashScreen.preventAutoHideAsync().catch((error) => {
+  console.warn(
+    'Failed to prevent splash screen auto hide in root layout and the error is:',
+    error,
+  )
+})
+
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
     'sans-regular': require('@/assets/fonts/PlusJakartaSans-Regular.ttf'),
