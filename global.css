@@ -5,17 +5,17 @@
 @import 'nativewind/theme';
 
 @theme {
-  --color-background: #f3fbf6;
-  --color-foreground: #052e16;
-  --color-card: #ffffff;
-  --color-muted: #dcfce7;
-  --color-muted-foreground: #4b5563;
-  --color-primary: #16a34a;
-  --color-accent: #10b981;
-  --color-border: rgba(22, 163, 74, 0.22);
-  --color-success: #22c55e;
-  --color-destructive: #ef4444;
-  --color-subscription: #059669;
+  --color-background: #f3faf8;
+  --color-foreground: #0b1426;
+  --color-card: #fff;
+  --color-muted: #dbece8;
+  --color-muted-foreground: #5c6f7a;
+  --color-primary: #0f766e;
+  --color-accent: #7c3aed;
+  --color-border: rgba(15, 118, 110, 0.18);
+  --color-success: #16a34a;
+  --color-destructive: #dc2626;
+  --color-subscription: #14b8a6;
 
   --spacing-0: 0px;
   --spacing-1: 4px;
